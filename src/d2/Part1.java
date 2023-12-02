@@ -8,9 +8,9 @@ import java.util.List;
 
 public class Part1 {
 
-    final static int RED = 12;
-    final static int GREEN = 13;
-    final static int BLUE = 14;
+    static final int RED = 12;
+    static final int GREEN = 13;
+    static final int BLUE = 14;
 
     public static void main(String[] args) throws IOException {
         List<String> lines = Files.readAllLines(Path.of("src", "d2", "input"));
@@ -22,7 +22,7 @@ public class Part1 {
         System.out.println(sum);
     }
 
-    private static Game toGame(String line) {
+    static Game toGame(String line) {
         String[] split = line.split(":");
         int gameNumber = getGameNumber(split[0]);
         List<SubGame> subGames = getSubGames(split[1]);

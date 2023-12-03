@@ -41,4 +41,9 @@ public class PartNr {
         coordinates.add(new Coordinate(firstCoordinate.y(), firstCoordinate.x() + 3, "unknown"));
         return coordinates;
     }
+
+    @Override
+    public String toString() {
+        return firstCoordinate.toString() +": " + nr;
+    }
 }

@@ -18,7 +18,7 @@ public class Part1 {
         System.out.println(sum);
     }
 
-    private static List<PartNr> getPotentialPartNumbers(List<String> lines) {
+    static List<PartNr> getPotentialPartNumbers(List<String> lines) {
         List<Coordinate> coordinatesWithNumber = getCoordinates(lines, Character::isDigit);
         List<PartNr> partNrs = new ArrayList<>();
         String nr = "";
@@ -61,14 +61,7 @@ public class Part1 {
         return isSymbol(left) || isSymbol(leftAbove) || isSymbol(above) || isSymbol(rightAbove) || isSymbol(right) || isSymbol(rightBelow) || isSymbol(below) || isSymbol(leftBelow);
     }
 
-    private static boolean isSymbol(Coordinate coordinate) {
-        if (coordinate == null) {
-            return false;
-        }
-        return coordinate.isSymbol();
-    }
-
-    private static Coordinate getCoordinate(List<String> lines, int x, int y) {
+    static Coordinate getCoordinate(List<String> lines, int x, int y) {
         try {
             String line = lines.get(y);
             char[] charArray = line.toCharArray();
@@ -78,7 +71,14 @@ public class Part1 {
         }
     }
 
-    private static List<Coordinate> getCoordinates(List<String> lines, Predicate<Character> predicate) {
+    private static boolean isSymbol(Coordinate coordinate) {
+        if (coordinate == null) {
+            return false;
+        }
+        return coordinate.isSymbol();
+    }
+
+    static List<Coordinate> getCoordinates(List<String> lines, Predicate<Character> predicate) {
         ArrayList<Coordinate> coordinates = new ArrayList<>();
         for (int lineNr = 0; lineNr < lines.size(); lineNr++) {
             String line = lines.get(lineNr);

@@ -20,7 +20,7 @@ public class Part1 {
         System.out.println(totalPoints);
     }
 
-    private static List<List<Integer>> getWinningList(List<String> lines) {
+    static List<List<Integer>> getWinningList(List<String> lines) {
         return lines.stream()
                 .map(s -> s.split("\\|")[0])
                 .map(s -> s.substring(10))
@@ -28,7 +28,7 @@ public class Part1 {
                 .toList();
     }
 
-    private static List<List<Integer>> getOwnList(List<String> lines) {
+    static List<List<Integer>> getOwnList(List<String> lines) {
         return lines.stream()
                 .map(s -> s.split("\\|")[1])
                 .map(Part1::getNumberList)
@@ -43,7 +43,7 @@ public class Part1 {
                 .toList();
     }
 
-    private static int getNrWinsPerCard(List<Integer> own, List<Integer> winning) {
+    static int getNrWinsPerCard(List<Integer> own, List<Integer> winning) {
         int nrWins = 0;
         for (Integer nrOwn : own) {
             if (winning.contains(nrOwn)) {

@@ -1,8 +1,8 @@
 package d6;
 
-public record Race(int speed, int duration) {
+public record Race(long speed, long duration) {
 
-    int getDistance() {
+    long getDistance() {
         return speed * duration;
     }
 }
